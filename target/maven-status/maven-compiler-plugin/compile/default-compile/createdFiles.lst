@@ -1,0 +1,8 @@
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\CrudManagerApplication.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\MedicoController.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\PlantaoController.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\InitializeDataBase.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\model\dao\PlantaoRepository.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\model\Plantao.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\model\Medico.class
+br\edu\ifsudeminas\mch\webII\crudmanager\CrudManager\model\dao\MedicoRepository.class

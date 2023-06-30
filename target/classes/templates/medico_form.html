@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Crud Manager - Médico</title>
+</head>
+<body>
+<div th:replace="cabecalho :: head"></div>
+    <div class="container my-2">
+        <h2>Médico</h2>
+        <form action="#" th:action="@{/medicos/new}" th:object="${medico}" method="POST">
+            <input th:field="*{id}" type="hidden" id="id">
+            
+            <input type="text" th:field="*{name}" placeholder="Nome" class="form-control mb-4 col-4">
+            
+            <input type="email" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+            
+            <select th:field="*{gender}" class="form-control mb-4 col-4">
+                <option value="">Selecione o Gênero</option>
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+            
+            <button type="submit" class="btn btn-info col-2">Salvar</button>
+        </form>
+        <hr>
+        <a th:href="@{/medicos}">Médicos</a>
+    </div>
+</body>
+</html>

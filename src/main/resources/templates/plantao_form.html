@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
-    <title>Crud Manager - Plantão</title>
+	<div th:replace="cabecalho :: head"></div>
+	<title>Crud Manager - Plantao</title>
 </head>
+
 <body>
-<div th:replace="cabecalho :: head"></div>
-    <div class="container my-2">
-        <h2>Plantão</h2>
-        <form action="#" th:action="@{/plantoes/new}" th:object="${plantao}" method="POST">
-            <input th:field="*{id}" type="hidden" id="id">
-
-            <input type="text" th:field="*{local}" placeholder="Local" class="form-control mb-4 col-4">
-
-            <input type="text" th:field="*{horario}" placeholder="Horário" class="form-control mb-4 col-4">
-
-            <div class="form-group">
-                <label for="medico">Médico:</label>
-                <select th:field="*{medico.id}" class="form-control mb-4 col-4" id="medico">
-                    <option value="">Selecione o Médico</option>
-                    <option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.name}"></option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-info col-2">Salvar</button>
-        </form>
-        <hr>
-        <a th:field="@{/plantoes}" href="/templates/indexPlantoes.html">Plantoes</a> 
-    </div>
+	<div class="container my-2">
+		<h2>Plantoes</h2>
+		<form action="#" th:action="@{/plantoes/new}" th:object="${plantao}" method="POST">
+			<input type="hidden" th:field="*{id}">
+			
+			<input type="text" th:field="*{local}" placeholder="Local" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{horario}" placeholder="Horário" class="form-control mb-4 col-4">
+			
+			<div class="form-group">
+				<label for="medico">Médico:</label>
+				<select th:field="*{medico.id}" class="form-control mb-4 col-4" id="medico">
+					<option value="">Selecione o Médico</option>
+					<option th:each="medico : ${medicos}" th:value="${medico.id}" th:text="${medico.name}"></option>
+				</select>
+			</div>
+			
+			<button type="submit" class="btn col-2" style="background-color: #89e08f; color:#FFFFFF;">Salvar</button>
+		</form>
+		<hr>
+		<a th:href="@{/plantoes}" href="/indexPlantoes.html">Plantoes</a>
+	</div>
 </body>
 </html>

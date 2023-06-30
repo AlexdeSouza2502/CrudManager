@@ -11,3 +11,4 @@ public class CrudManagerApplication {
 	}
 
 }
+//o erro 500 persiste blz

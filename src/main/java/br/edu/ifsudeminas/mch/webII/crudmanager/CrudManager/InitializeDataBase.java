@@ -37,10 +37,30 @@ public class InitializeDataBase implements CommandLineRunner {
 		jose.setName("jose");
 		jose.setEmail("jose@gmail.com");
 		jose.setGender("M");
-
+		
+		
+		Medico luiz = new Medico();
+		luiz.setName("Luiz");
+		luiz.setEmail("Luizin@mail.com");
+		luiz.setGender("M");
+		
 		medicoRepository.save(alex);
 		medicoRepository.save(maria);
 		medicoRepository.save(jose);
+		medicoRepository.save(luiz);
+		medicoRepository.flush();
+		
+		if (alex.getId() == null) {
+		    medicoRepository.save(alex);
+		}
+
+		if (maria.getId() == null) {
+		    medicoRepository.save(maria);
+		}
+
+		if (jose.getId() == null) {
+		    medicoRepository.save(jose);
+		}
 
 		Plantao plantao1 = new Plantao();
 		plantao1.setLocal("Hospital A");
@@ -59,6 +79,7 @@ public class InitializeDataBase implements CommandLineRunner {
 		plantao3.setHorario("20:00 - 02:00");
 		plantao3.setMedico(jose);
 		plantaoRepository.save(plantao3);
+		plantaoRepository.flush();
 
 		List<Medico> medicos = medicoRepository.findAll();
 
